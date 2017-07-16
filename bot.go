@@ -167,7 +167,10 @@ func fetchInstagramPhoto(u string) (*InstagramResponse, error) {
 	}
 
 	c := http.Client{Transport: scraper}
-	res, err := c.Get(parseInput(u))
+	j := parseInput(u)
+
+	Info.Println(j)
+	res, err := c.Get(j)
 
 	if err != nil {
 		return nil, err
