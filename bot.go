@@ -49,7 +49,7 @@ func main() {
 		Error.Fatalln("Error in starting bot", err.Error())
 	}
 	//if GO_ENV == "development" {
-		bot.Debug = true
+	bot.Debug = false
 	//}
 
 	Info.Printf("Authorized on account %s\n", bot.Self.UserName)
@@ -139,7 +139,7 @@ func handleUpdates(bot *tbot.BotAPI, u tbot.Update) {
 
 		Info.Printf("Serving %s (@%s) Profile Picture\n", i.Realname, i.Username)
 
-		imgBytes, err := downloadImage(i.image)
+		//imgBytes, err := downloadImage(i.image)
 
 		if err != nil {
 			Warn.Println("Error in downloading Image", err.Error())
@@ -149,7 +149,7 @@ func handleUpdates(bot *tbot.BotAPI, u tbot.Update) {
 			return
 		}
 
-		msg := tbot.NewPhotoUpload(u.Message.Chat.ID, imgBytes)
+		msg := tbot.NewPhotoUpload(u.Message.Chat.ID, i.image)
 		msg.ReplyToMessageID = u.Message.MessageID
 
 		bot.Send(msg)
