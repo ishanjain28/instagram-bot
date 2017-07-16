@@ -210,9 +210,9 @@ func parseInput(u string) string {
 		return "https://instagram.com/" + u
 	}
 	if j.Scheme == "https" && j.Host == "instagram.com" {
-		return j.String()
+		return "https://instagram.com/" + j.Path
 	}
-	return ""
+	return u
 }
 
 func find(attr []html.Attribute, insta *InstagramResponse) {
