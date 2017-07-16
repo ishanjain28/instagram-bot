@@ -141,9 +141,9 @@ func handleUpdates(bot *tbot.BotAPI, u tbot.Update) {
 		}
 
 		Info.Printf("Serving %s (@%s) Profile Picture\n", i.Realname, i.Username)
-		Info.Printf("%s's Image: %s\n", i.Username, i.image)
+		//Info.Printf("%s's Image: %s\n", i.Username, i.image)
 		imgBytes, err := downloadImage(i.image)
-		//
+
 		if err != nil {
 			Warn.Println("Error in downloading Image", err.Error())
 			msg := tbot.NewMessage(u.Message.Chat.ID, "Error in downloading Image, Please retry")
@@ -159,7 +159,6 @@ func handleUpdates(bot *tbot.BotAPI, u tbot.Update) {
 
 	}
 }
-
 func fetchInstagramPhoto(u string) (*InstagramResponse, error) {
 
 	scraper, err := scraper2.NewTransport(http.DefaultTransport)
@@ -204,12 +203,16 @@ func fetchInstagramPhoto(u string) (*InstagramResponse, error) {
 }
 
 func parseInput(u string) string {
+	Info.Println(u)
 	j, err := url.ParseRequestURI(u)
 	if err != nil {
+		Warn.Println("Not a url")
 		//	It's a username
 		return "https://instagram.com/" + u
 	}
+
 	if j.Scheme == "https" && j.Host == "instagram.com" {
+		Warn.Println("URL", "https://instagram.com/"+j.RawPath, " ", j.Path)
 		return "https://instagram.com/" + j.Path
 	}
 	return u
