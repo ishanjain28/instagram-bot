@@ -1,125 +1,119 @@
 {
-	"comment": "",
-	"ignore": "test",
-	"package": [
-		{
-			"checksumSHA1": "jiXcw7gcfPXIFlpNnBI+J9Fio/c=",
-			"path": "github.com/cardigann/go-cloudflare-scraper",
-			"revision": "6b7caee8e65b46283b3652ab6f7e181fb727ca6f",
-			"revisionTime": "2017-06-30T23:39:36Z"
-		},
-		{
-			"checksumSHA1": "AANTVr9CVVyzsgviODY6Wi2thuM=",
-			"path": "github.com/fatih/color",
-			"revision": "62e9147c64a1ed519147b62a56a14e83e2be02c1",
-			"revisionTime": "2017-05-23T20:24:04Z"
-		},
-		{
-			"checksumSHA1": "itKKtC8AIoHPZF4EEu3RzAKTfIs=",
-			"path": "github.com/go-telegram-bot-api/telegram-bot-api",
-			"revision": "ebe7b8254e1592d3701010dc4f927a87b3559397",
-			"revisionTime": "2017-07-02T20:43:42Z",
-			"tree": true
-		},
-		{
-			"checksumSHA1": "HIBuKfCB3tf6n07TIkxk5QBzWy8=",
-			"path": "github.com/ishanjain28/instagram-bot",
-			"revision": "bc0ba341e3492bda2035cfc101151ed7950fe09a",
-			"revisionTime": "2017-07-16T16:36:31Z"
-		},
-		{
-			"checksumSHA1": "bfGiF5iraNvFHCCK3KVvITsPCok=",
-			"path": "github.com/mattn/go-colorable",
-			"revision": "3fa8c76f9daed4067e4a806fb7e4dc86455c6d6a",
-			"revisionTime": "2017-07-11T10:06:59Z"
-		},
-		{
-			"checksumSHA1": "U6lX43KDDlNOn+Z0Yyww+ZzHfFo=",
-			"path": "github.com/mattn/go-isatty",
-			"revision": "fc9e8d8ef48496124e79ae0df75490096eccf6fe",
-			"revisionTime": "2017-03-22T23:44:13Z"
-		},
-		{
-			"checksumSHA1": "ZSYig6eYkc34ELHl6O5gRtJvr6o=",
-			"path": "github.com/robertkrimen/otto",
-			"revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
-			"revisionTime": "2017-06-04T10:36:02Z"
-		},
-		{
-			"checksumSHA1": "iQIrS8OScxs4pMTAM976jr2VSkE=",
-			"path": "github.com/robertkrimen/otto/ast",
-			"revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
-			"revisionTime": "2017-06-04T10:36:02Z"
-		},
-		{
-			"checksumSHA1": "L0KsB2EzTlPgv0iae3q3SukNW7U=",
-			"path": "github.com/robertkrimen/otto/dbg",
-			"revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
-			"revisionTime": "2017-06-04T10:36:02Z"
-		},
-		{
-			"checksumSHA1": "euDLJKhw4doeTSxjEoezjxYXLzs=",
-			"path": "github.com/robertkrimen/otto/file",
-			"revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
-			"revisionTime": "2017-06-04T10:36:02Z"
-		},
-		{
-			"checksumSHA1": "LLuLITFO8chqSG0+APJIy5NtOHU=",
-			"path": "github.com/robertkrimen/otto/parser",
-			"revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
-			"revisionTime": "2017-06-04T10:36:02Z"
-		},
-		{
-			"checksumSHA1": "7J/7NaYRqKhBvZ+dTIutsEoEgFw=",
-			"path": "github.com/robertkrimen/otto/registry",
-			"revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
-			"revisionTime": "2017-06-04T10:36:02Z"
-		},
-		{
-			"checksumSHA1": "/jMXYuXycBpTqWhRyJ2xsqvHvQI=",
-			"path": "github.com/robertkrimen/otto/token",
-			"revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
-			"revisionTime": "2017-06-04T10:36:02Z"
-		},
-		{
-			"checksumSHA1": "sG8UqE0AwOTdnlcdLH5emDFWqog=",
-			"path": "github.com/technoweenie/multipartstreamer",
-			"revision": "a90a01d73ae432e2611d178c18367fbaa13e0154",
-			"revisionTime": "2013-10-20T00:18:33Z"
-		},
-		{
-			"checksumSHA1": "vqc3a+oTUGX8PmD0TS+qQ7gmN8I=",
-			"path": "golang.org/x/net/html",
-			"revision": "ffcf1bedda3b04ebb15a168a59800a73d6dc0f4d",
-			"revisionTime": "2017-03-29T01:43:45Z"
-		},
-		{
-			"checksumSHA1": "00eQaGynDYrv3tL+C7l9xH0IDZg=",
-			"path": "golang.org/x/net/html/atom",
-			"revision": "ffcf1bedda3b04ebb15a168a59800a73d6dc0f4d",
-			"revisionTime": "2017-03-29T01:43:45Z"
-		},
-		{
-			"checksumSHA1": "oBjdFvDUZpioGsB6URqe16hDQUg=",
-			"origin": "github.com/fatih/color/vendor/golang.org/x/sys/unix",
-			"path": "golang.org/x/sys/unix",
-			"revision": "62e9147c64a1ed519147b62a56a14e83e2be02c1",
-			"revisionTime": "2017-05-23T20:24:04Z"
-		},
-		{
-			"checksumSHA1": "4BwmmgQUhWtizsR2soXND0nqZ1I=",
-			"origin": "github.com/robertkrimen/otto/vendor/gopkg.in/sourcemap.v1",
-			"path": "gopkg.in/sourcemap.v1",
-			"revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
-			"revisionTime": "2017-06-04T10:36:02Z"
-		},
-		{
-			"checksumSHA1": "GDXPA04g0Dfwu2w++JiOKkYuZEc=",
-			"origin": "github.com/robertkrimen/otto/vendor/gopkg.in/sourcemap.v1/base64vlq",
-			"path": "gopkg.in/sourcemap.v1/base64vlq",
-			"revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
-			"revisionTime": "2017-06-04T10:36:02Z"
-		}
-	],
-	"rootPath": "github.com/ishanjain28/instagram-bot"
+  "comment": "",
+  "ignore": "test",
+  "package": [
+    {
+      "checksumSHA1": "jiXcw7gcfPXIFlpNnBI+J9Fio/c=",
+      "path": "github.com/cardigann/go-cloudflare-scraper",
+      "revision": "6b7caee8e65b46283b3652ab6f7e181fb727ca6f",
+      "revisionTime": "2017-06-30T23:39:36Z"
+    },
+    {
+      "checksumSHA1": "AANTVr9CVVyzsgviODY6Wi2thuM=",
+      "path": "github.com/fatih/color",
+      "revision": "62e9147c64a1ed519147b62a56a14e83e2be02c1",
+      "revisionTime": "2017-05-23T20:24:04Z"
+    },
+    {
+      "checksumSHA1": "itKKtC8AIoHPZF4EEu3RzAKTfIs=",
+      "path": "github.com/go-telegram-bot-api/telegram-bot-api",
+      "revision": "ebe7b8254e1592d3701010dc4f927a87b3559397",
+      "revisionTime": "2017-07-02T20:43:42Z",
+      "tree": true
+    },
+    {
+      "checksumSHA1": "bfGiF5iraNvFHCCK3KVvITsPCok=",
+      "path": "github.com/mattn/go-colorable",
+      "revision": "3fa8c76f9daed4067e4a806fb7e4dc86455c6d6a",
+      "revisionTime": "2017-07-11T10:06:59Z"
+    },
+    {
+      "checksumSHA1": "U6lX43KDDlNOn+Z0Yyww+ZzHfFo=",
+      "path": "github.com/mattn/go-isatty",
+      "revision": "fc9e8d8ef48496124e79ae0df75490096eccf6fe",
+      "revisionTime": "2017-03-22T23:44:13Z"
+    },
+    {
+      "checksumSHA1": "ZSYig6eYkc34ELHl6O5gRtJvr6o=",
+      "path": "github.com/robertkrimen/otto",
+      "revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
+      "revisionTime": "2017-06-04T10:36:02Z"
+    },
+    {
+      "checksumSHA1": "iQIrS8OScxs4pMTAM976jr2VSkE=",
+      "path": "github.com/robertkrimen/otto/ast",
+      "revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
+      "revisionTime": "2017-06-04T10:36:02Z"
+    },
+    {
+      "checksumSHA1": "L0KsB2EzTlPgv0iae3q3SukNW7U=",
+      "path": "github.com/robertkrimen/otto/dbg",
+      "revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
+      "revisionTime": "2017-06-04T10:36:02Z"
+    },
+    {
+      "checksumSHA1": "euDLJKhw4doeTSxjEoezjxYXLzs=",
+      "path": "github.com/robertkrimen/otto/file",
+      "revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
+      "revisionTime": "2017-06-04T10:36:02Z"
+    },
+    {
+      "checksumSHA1": "LLuLITFO8chqSG0+APJIy5NtOHU=",
+      "path": "github.com/robertkrimen/otto/parser",
+      "revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
+      "revisionTime": "2017-06-04T10:36:02Z"
+    },
+    {
+      "checksumSHA1": "7J/7NaYRqKhBvZ+dTIutsEoEgFw=",
+      "path": "github.com/robertkrimen/otto/registry",
+      "revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
+      "revisionTime": "2017-06-04T10:36:02Z"
+    },
+    {
+      "checksumSHA1": "/jMXYuXycBpTqWhRyJ2xsqvHvQI=",
+      "path": "github.com/robertkrimen/otto/token",
+      "revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
+      "revisionTime": "2017-06-04T10:36:02Z"
+    },
+    {
+      "checksumSHA1": "sG8UqE0AwOTdnlcdLH5emDFWqog=",
+      "path": "github.com/technoweenie/multipartstreamer",
+      "revision": "a90a01d73ae432e2611d178c18367fbaa13e0154",
+      "revisionTime": "2013-10-20T00:18:33Z"
+    },
+    {
+      "checksumSHA1": "vqc3a+oTUGX8PmD0TS+qQ7gmN8I=",
+      "path": "golang.org/x/net/html",
+      "revision": "ffcf1bedda3b04ebb15a168a59800a73d6dc0f4d",
+      "revisionTime": "2017-03-29T01:43:45Z"
+    },
+    {
+      "checksumSHA1": "00eQaGynDYrv3tL+C7l9xH0IDZg=",
+      "path": "golang.org/x/net/html/atom",
+      "revision": "ffcf1bedda3b04ebb15a168a59800a73d6dc0f4d",
+      "revisionTime": "2017-03-29T01:43:45Z"
+    },
+    {
+      "checksumSHA1": "oBjdFvDUZpioGsB6URqe16hDQUg=",
+      "origin": "github.com/fatih/color/vendor/golang.org/x/sys/unix",
+      "path": "golang.org/x/sys/unix",
+      "revision": "62e9147c64a1ed519147b62a56a14e83e2be02c1",
+      "revisionTime": "2017-05-23T20:24:04Z"
+    },
+    {
+      "checksumSHA1": "4BwmmgQUhWtizsR2soXND0nqZ1I=",
+      "origin": "github.com/robertkrimen/otto/vendor/gopkg.in/sourcemap.v1",
+      "path": "gopkg.in/sourcemap.v1",
+      "revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
+      "revisionTime": "2017-06-04T10:36:02Z"
+    },
+    {
+      "checksumSHA1": "GDXPA04g0Dfwu2w++JiOKkYuZEc=",
+      "origin": "github.com/robertkrimen/otto/vendor/gopkg.in/sourcemap.v1/base64vlq",
+      "path": "gopkg.in/sourcemap.v1/base64vlq",
+      "revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
+      "revisionTime": "2017-06-04T10:36:02Z"
+    }
+  ],
+  "rootPath": "github.com/ishanjain28/instagram-bot"
 }
