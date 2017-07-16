@@ -49,7 +49,7 @@ func main() {
 		Error.Fatalln("Error in starting bot", err.Error())
 	}
 	//if GO_ENV == "development" {
-	//	bot.Debug = true
+	bot.Debug = true
 	//}
 
 	Info.Printf("Authorized on account %s\n", bot.Self.UserName)
@@ -86,7 +86,7 @@ func fetchUpdates(bot *tbot.BotAPI) tbot.UpdatesChannel {
 	} else {
 		//	USe Webhooks, because deploying on heroku
 		Info.Println("Setting webhooks to fetch updates")
-		_, err := bot.SetWebhook(tbot.NewWebhookWithCert("https://dry-hamlet-60060.herokuapp.com:443"+"/"+bot.Token, "cert.pem"))
+		_, err := bot.SetWebhook(tbot.NewWebhook("http://dry-hamlet-60060.herokuapp.com/" + bot.Token))
 		if err != nil {
 			Error.Fatalln("Problem in setting webhook", err.Error())
 		}
@@ -94,7 +94,7 @@ func fetchUpdates(bot *tbot.BotAPI) tbot.UpdatesChannel {
 		updates := bot.ListenForWebhook("/" + bot.Token)
 
 		Info.Println("Starting HTTPS Server")
-		go http.ListenAndServeTLS(":"+PORT, "cert.pem", "key.pem", nil)
+		go http.ListenAndServe(":"+PORT, nil)
 
 		return updates
 	}
