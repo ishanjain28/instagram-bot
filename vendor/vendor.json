@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "jiXcw7gcfPXIFlpNnBI+J9Fio/c=",
+			"path": "github.com/cardigann/go-cloudflare-scraper",
+			"revision": "6b7caee8e65b46283b3652ab6f7e181fb727ca6f",
+			"revisionTime": "2017-06-30T23:39:36Z"
+		},
+		{
+			"checksumSHA1": "AANTVr9CVVyzsgviODY6Wi2thuM=",
+			"path": "github.com/fatih/color",
+			"revision": "62e9147c64a1ed519147b62a56a14e83e2be02c1",
+			"revisionTime": "2017-05-23T20:24:04Z"
+		}
+	],
+	"rootPath": "github.com/ishanjain28/instagram-bot"
+}
