@@ -8,6 +8,7 @@ import (
 	"golang.org/x/net/html"
 	"strings"
 	"io/ioutil"
+	"net/url"
 )
 
 var (
@@ -26,11 +27,6 @@ func main() {
 
 	Info.Println("Starting Bot...")
 
-	PORT = os.Getenv("PORT")
-	if PORT == "" {
-		Error.Fatalln("$PORT not set")
-	}
-
 	GO_ENV = os.Getenv("GO_ENV")
 	if GO_ENV == "" {
 		Warn.Println("$GO_ENV not set")
@@ -38,6 +34,13 @@ func main() {
 	}
 
 	Info.Println("$GO_ENV=" + GO_ENV)
+
+	if GO_ENV != "development" {
+		PORT = os.Getenv("PORT")
+		if PORT == "" {
+			Error.Fatalln("$PORT not set")
+		}
+	}
 
 	TOKEN = os.Getenv("TOKEN")
 	if TOKEN == "" {
@@ -165,7 +168,7 @@ func fetchInstagramPhoto(u string) (*InstagramResponse, error) {
 	}
 
 	c := http.Client{Transport: scraper}
-	res, err := c.Get("https://instagram.com/" + u)
+	res, err := c.Get(parseInput(u))
 
 	if err != nil {
 		return nil, err
@@ -182,6 +185,7 @@ func fetchInstagramPhoto(u string) (*InstagramResponse, error) {
 	var f func(node *html.Node)
 
 	i := &InstagramResponse{}
+	i.Username = u
 
 	f = func(n *html.Node) {
 
@@ -197,6 +201,18 @@ func fetchInstagramPhoto(u string) (*InstagramResponse, error) {
 	f(h)
 
 	return i, nil
+}
+
+func parseInput(u string) string {
+	j, err := url.ParseRequestURI(u)
+	if err != nil {
+		//	It's a username
+		return "https://instagram.com/" + u
+	}
+	if j.Scheme == "https" && j.Host == "instagram.com" {
+		return j.String()
+	}
+	return ""
 }
 
 func find(attr []html.Attribute, insta *InstagramResponse) {
@@ -221,10 +237,6 @@ func find(attr []html.Attribute, insta *InstagramResponse) {
 					a := strings.Split(v.Val, " (@")
 
 					insta.Realname = a[0]
-
-					a = strings.Split(a[1], ")")
-
-					insta.Username = a[0]
 
 				}
 			}
