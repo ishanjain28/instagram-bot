@@ -18,3 +18,5 @@
 instagram-bot
 
 /vendor/github.com/
+/vendor/golang.org/
+/vendor/gopkg.in/
