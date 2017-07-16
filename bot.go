@@ -138,16 +138,16 @@ func handleUpdates(bot *tbot.BotAPI, u tbot.Update) {
 		}
 
 		Info.Printf("Serving %s (@%s) Profile Picture\n", i.Realname, i.Username)
-
+		Info.Printf("%s's Image: %s\n", i.Username, i.image)
 		//imgBytes, err := downloadImage(i.image)
 
-		if err != nil {
-			Warn.Println("Error in downloading Image", err.Error())
-			msg := tbot.NewMessage(u.Message.Chat.ID, "Error in downloading Image, Please retry")
-			msg.ReplyToMessageID = u.Message.MessageID
-			bot.Send(msg)
-			return
-		}
+		//if err != nil {
+		//	Warn.Println("Error in downloading Image", err.Error())
+		//	msg := tbot.NewMessage(u.Message.Chat.ID, "Error in downloading Image, Please retry")
+		//	msg.ReplyToMessageID = u.Message.MessageID
+		//	bot.Send(msg)
+		//	return
+		//}
 
 		msg := tbot.NewPhotoUpload(u.Message.Chat.ID, i.image)
 		msg.ReplyToMessageID = u.Message.MessageID
