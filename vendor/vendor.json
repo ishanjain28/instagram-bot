@@ -13,6 +13,25 @@
 			"path": "github.com/fatih/color",
 			"revision": "62e9147c64a1ed519147b62a56a14e83e2be02c1",
 			"revisionTime": "2017-05-23T20:24:04Z"
+		},
+		{
+			"checksumSHA1": "itKKtC8AIoHPZF4EEu3RzAKTfIs=",
+			"path": "github.com/go-telegram-bot-api/telegram-bot-api",
+			"revision": "ebe7b8254e1592d3701010dc4f927a87b3559397",
+			"revisionTime": "2017-07-02T20:43:42Z",
+			"tree": true
+		},
+		{
+			"checksumSHA1": "bfGiF5iraNvFHCCK3KVvITsPCok=",
+			"path": "github.com/mattn/go-colorable",
+			"revision": "3fa8c76f9daed4067e4a806fb7e4dc86455c6d6a",
+			"revisionTime": "2017-07-11T10:06:59Z"
+		},
+		{
+			"checksumSHA1": "sG8UqE0AwOTdnlcdLH5emDFWqog=",
+			"path": "github.com/technoweenie/multipartstreamer",
+			"revision": "a90a01d73ae432e2611d178c18367fbaa13e0154",
+			"revisionTime": "2013-10-20T00:18:33Z"
 		}
 	],
 	"rootPath": "github.com/ishanjain28/instagram-bot"
