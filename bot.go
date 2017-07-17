@@ -9,6 +9,7 @@ import (
 	"strings"
 	"io/ioutil"
 	"net/url"
+	"fmt"
 )
 
 var (
@@ -169,7 +170,6 @@ func fetchInstagramPhoto(u string) (*InstagramResponse, error) {
 	c := http.Client{Transport: scraper}
 	j := parseInput(u)
 
-	Info.Println(j)
 	res, err := c.Get(j)
 
 	if err != nil {
@@ -206,14 +206,14 @@ func fetchInstagramPhoto(u string) (*InstagramResponse, error) {
 }
 
 func parseInput(u string) string {
-	Info.Println(u)
 	j, err := url.ParseRequestURI(u)
 	if err != nil {
-		Warn.Println("Not a url")
 		//	It's a username
 		return "https://instagram.com/" + u
 	}
 
+	fmt.Println(j.Hostname(), j.Scheme, j.Host, j.Path, j.RawPath)
+	fmt.Println(u)
 	if j.Scheme == "https" && j.Host == "instagram.com" {
 		Warn.Println("URL", "https://instagram.com/"+j.RawPath, " ", j.Path)
 		return "https://instagram.com/" + j.Path
