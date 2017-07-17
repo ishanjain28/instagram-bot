@@ -132,7 +132,7 @@ func handleUpdates(bot *tbot.BotAPI, u tbot.Update) {
 			return
 		}
 
-		if i.Username == "" && i.Realname == "" && i.image == "" {
+		if i.image == "" {
 			//	No such user
 			msg := tbot.NewMessage(u.Message.Chat.ID, "Invalid User ID, Enter Valid User ID")
 			msg.ReplyToMessageID = u.Message.MessageID
