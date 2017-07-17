@@ -141,7 +141,7 @@ func handleUpdates(bot *tbot.BotAPI, u tbot.Update) {
 		}
 
 		Info.Printf("Serving %s (@%s) Profile Picture\n", i.Realname, i.Username)
-		//Info.Printf("%s's Image: %s\n", i.Username, i.image)
+		Info.Printf("%s's Image: %s\n", i.Username, i.image)
 		imgBytes, err := downloadImage(i.image)
 
 		if err != nil {
@@ -213,8 +213,8 @@ func parseInput(u string) string {
 	}
 
 	if j.Scheme == "https" && j.Host == "instagram.com" {
-		Warn.Println("URL", "https://instagram.com"+j.RawPath)
-		return "https://instagram.com" + j.RawPath
+		Warn.Println("URL", "https://instagram.com"+j.Path)
+		return "https://instagram.com" + j.Path
 	}
 	return u
 }
