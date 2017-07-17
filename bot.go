@@ -42,6 +42,7 @@ func main() {
 		}
 	}
 
+	Info.Println("$PORT=" + PORT)
 	TOKEN = os.Getenv("TOKEN")
 	if TOKEN == "" {
 		Error.Fatalln("$TOKEN not set")
@@ -93,7 +94,7 @@ func fetchUpdates(bot *tbot.BotAPI) tbot.UpdatesChannel {
 
 		//	Use Webhook, because deploying on heroku
 		Info.Println("Setting webhooks to fetch updates")
-		_, err := bot.SetWebhook(tbot.NewWebhookWithCert("https://dry-hamlet-60060.herokuapp.com/instagram_profile_bot/"+bot.Token, "pub.pem"))
+		_, err := bot.SetWebhook(tbot.NewWebhookWithCert("https://dry-hamlet-60060.herokuapp.com:8443/instagram_profile_bot/"+bot.Token, "pub.pem"))
 		if err != nil {
 			Error.Fatalln("Problem in setting webhook", err.Error())
 		}
