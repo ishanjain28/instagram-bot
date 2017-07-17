@@ -94,7 +94,7 @@ func fetchUpdates(bot *tbot.BotAPI) tbot.UpdatesChannel {
 
 		//	Use Webhook, because deploying on heroku
 		Info.Println("Setting webhooks to fetch updates")
-		_, err := bot.SetWebhook(tbot.NewWebhookWithCert("https://dry-hamlet-60060.herokuapp.com:8443/instagram_profile_bot/"+bot.Token, "pub.pem"))
+		_, err := bot.SetWebhook(tbot.NewWebhookWithCert("http://dry-hamlet-60060.herokuapp.com/instagram_profile_bot/"+bot.Token, nil))
 		if err != nil {
 			Error.Fatalln("Problem in setting webhook", err.Error())
 		}
@@ -105,7 +105,7 @@ func fetchUpdates(bot *tbot.BotAPI) tbot.UpdatesChannel {
 		http.HandleFunc("/", redirectToTelegram)
 
 		Info.Println("Starting HTTPS Server")
-		go http.ListenAndServeTLS(":"+PORT, "pub.pem", "priv.key", nil)
+		go http.ListenAndServe(":"+PORT, nil)
 
 		w, err := bot.GetWebhookInfo()
 		if err != nil {
