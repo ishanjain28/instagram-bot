@@ -87,9 +87,9 @@ func fetchUpdates(bot *tbot.BotAPI) tbot.UpdatesChannel {
 		return updates
 
 	} else {
-		//	USe Webhooks, because deploying on heroku
+		//	Use Webhook, because deploying on heroku
 		Info.Println("Setting webhooks to fetch updates")
-		_, err := bot.SetWebhook(tbot.NewWebhookWithCert("https://dry-hamlet-60060.herokuapp.com:443"+"/"+bot.Token, "cert.pem"))
+		_, err := bot.SetWebhook(tbot.NewWebhookWithCert("https://dry-hamlet-60060.herokuapp.com/"+bot.Token, "cert.pem"))
 		if err != nil {
 			Error.Fatalln("Problem in setting webhook", err.Error())
 		}
@@ -99,6 +99,13 @@ func fetchUpdates(bot *tbot.BotAPI) tbot.UpdatesChannel {
 		Info.Println("Starting HTTPS Server")
 		go http.ListenAndServeTLS(":"+PORT, "cert.pem", "key.pem", nil)
 
+		w, err := bot.GetWebhookInfo()
+		if err != nil {
+			Error.Fatalln("Error in fetching webhook info", err.Error())
+		}
+
+		Info.Println("URL:", w.URL)
+		Info.Println("Is Set?:", w.IsSet())
 		return updates
 	}
 }
@@ -159,6 +166,7 @@ func handleUpdates(bot *tbot.BotAPI, u tbot.Update) {
 
 	}
 }
+
 func fetchInstagramPhoto(u string) (*InstagramResponse, error) {
 
 	scraper, err := scraper2.NewTransport(http.DefaultTransport)
