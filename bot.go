@@ -62,8 +62,8 @@ func main() {
 
 	for update := range updates {
 		if update.Message == nil {
-			msg := tbot.NewMessage(update.Message.Chat.ID, "Sorry, I am not sure what you mean, Type /help to get help")
-			bot.Send(msg)
+			//msg := tbot.NewMessage(update.Message.Chat.ID, "Sorry, I am not sure what you mean, Type /help to get help")
+			//bot.Send(msg)
 			continue
 		}
 		handleUpdates(bot, update)
@@ -94,7 +94,7 @@ func fetchUpdates(bot *tbot.BotAPI) tbot.UpdatesChannel {
 
 		//	Use Webhook, because deploying on heroku
 		Info.Println("Setting webhooks to fetch updates")
-		_, err := bot.SetWebhook(tbot.NewWebhookWithCert("https://dry-hamlet-60060.herokuapp.com/instagram_profile_bot/"+bot.Token, "cert.pem"))
+		_, err := bot.SetWebhook(tbot.NewWebhook("https://dry-hamlet-60060.herokuapp.com/instagram_profile_bot/" + bot.Token))
 		if err != nil {
 			Error.Fatalln("Problem in setting webhook", err.Error())
 		}
@@ -104,8 +104,8 @@ func fetchUpdates(bot *tbot.BotAPI) tbot.UpdatesChannel {
 		//redirect users visiting "/" to bot's telegram page
 		http.HandleFunc("/", redirectToTelegram)
 
-		Info.Println("Starting HTTPS Server")
-		go http.ListenAndServeTLS(":"+PORT, "cert.pem", "private.key", nil)
+		Info.Println("Starting HTTP Server")
+		go http.ListenAndServe(":"+PORT, nil)
 
 		w, err := bot.GetWebhookInfo()
 		if err != nil {
