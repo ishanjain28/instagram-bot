@@ -1,14 +1,14 @@
 package main
 
 import (
-	"os"
-	tbot "github.com/go-telegram-bot-api/telegram-bot-api"
-	"net/http"
 	scraper2 "github.com/cardigann/go-cloudflare-scraper"
+	tbot "github.com/go-telegram-bot-api/telegram-bot-api"
 	"golang.org/x/net/html"
-	"strings"
 	"io/ioutil"
+	"net/http"
 	"net/url"
+	"os"
+	"strings"
 )
 
 var (

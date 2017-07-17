@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/fatih/color"
 	"log"
 	"os"
-	"github.com/fatih/color"
 )
 
 var (
