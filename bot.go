@@ -206,14 +206,17 @@ func fetchInstagramPhoto(u string) (*InstagramResponse, error) {
 
 func parseInput(u string) string {
 	u = strings.ToLower(u)
+
 	j, err := url.ParseRequestURI(u)
 	if err != nil {
 		//	It's a username
 		return "https://instagram.com/" + u
 	}
+	if u[:8] != "https://" {
+		u = "https://" + u
+	}
 
-	if j.Scheme == "https" && j.Host == "instagram.com" {
-		Warn.Println("URL", "https://instagram.com"+j.Path)
+	if j.Host == "instagram.com" {
 		return "https://instagram.com" + j.Path
 	}
 	return u
